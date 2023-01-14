@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 15:26:53 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 17:42:18 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,11 @@ typedef struct s_list
 	void		*imag_player;
 	void		*imag_wall;
 	void		*imag_exit;
-	void		*imag_earth;
+	void		*imag_ground;
+	void		*imag_collect;
 	int			h;
 	int			w;
+	char		**map;
 }	t_list;
 
 int		ft_strlen(char *str);
@@ -75,6 +77,7 @@ char	**print_map(char **tab);
 void	freemap(char **str);
 int		backtracking(char **str);
 void	parsing(int ac,char *av,t_list *k);
+void	draw_map(t_list *k);
 
 
 

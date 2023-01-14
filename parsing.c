@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 15:26:25 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 16:54:19 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,10 +154,8 @@ int cp(char **tab, char k)
 void	all_parsing_check(char **tab , t_list *k)
 {
 	int i;
-	char **copy;
 
 	i = 0;
-	copy = (char **)ft_calloc(ft_strlen(*tab),sizeof(char*));
 	check_lines(tab , k);
 	check_wallls(tab);
 	check_assets(tab);
@@ -197,6 +195,7 @@ void parsing(int ac,char* av, t_list *k)
 			}
 			tab = ft_split(sj,'\n');	
 			all_parsing_check(tab ,k);
+		k->map = tab;
 		}
 		else
 		 er();
