@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/08 13:00:29 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/10 14:20:32 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,7 @@ int main(int ac, char **av)
 				str = get_next_line(fd);
 			}
 			tab = ft_split(sj,'\n');	
-			check_lines(tab);
-			check_wallls(tab);
-			check_assets(tab);
-			check_assets_numbers(tab);
+			all_parsing_check(tab);
 		}
 		else
 		 er();

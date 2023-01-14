@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/08 12:24:35 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 10:35:49 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,15 @@ void	check_assets(char **tab);
 void 	er();
 int		cp(char **tab, char k);
 void	check_assets_numbers(char **tab);
-
-
+void	all_parsing_check(char **tab);
+char	**copy_map(char **map);
+void	*ft_calloc(size_t count, size_t size);
+void	ft_bzero(void *s, size_t n);
+void	find_pos(int *x, int *y, char **tab, char c);
+int		back_track_fun(char **tab, char c , int x, int y);
+char	**print_map(char **tab);
+void	freemap(char **str);
+int		backtracking(char **str);
 
 
 

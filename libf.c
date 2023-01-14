@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:33:11 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/08 11:25:02 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 10:42:19 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,4 +169,39 @@ int	word_count(const char *str, char c)
 		}
 	}
 	return (count);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	ptr = (void *)malloc(count * size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_bzero(ptr, count * size);
+	return (ptr);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*k;
+
+	k = s;
+	while (n)
+	{
+		*k++ = 0;
+		n--;
+	}
+}
+
+void	freemap(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i++]);
+	}
+	free(str);
 }

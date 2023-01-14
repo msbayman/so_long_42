@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/08 13:11:33 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 10:51:35 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void  check_lines(char	**tab)
 	
 	i = 0;
 	j = ft_strlen(tab[0]);
-
 	if(j == 0)
 		er();
 	while (tab[i])
@@ -90,25 +89,25 @@ void check_wallls(char **tab)
 	}
 }
 
-void tba3(char **tab)
-{
-	int i;
-	int j;
+// void tba3(char **tab)
+// {
+// 	int i;
+// 	int j;
 
-	i = 0;
-	j = 0;
-	while (tab[i])
-	{
-		j = 0;
-		while(tab[i][j])
-		{
-			printf("%c", tab[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-	}
-}
+// 	i = 0;
+// 	j = 0;
+// 	while (tab[i])
+// 	{
+// 		j = 0;
+// 		while(tab[i][j])
+// 		{
+// 			printf("%c", tab[i][j]);
+// 			j++;
+// 		}
+// 		printf("\n");
+// 		i++;
+// 	}
+// }
 
 void check_assets(char **tab)
 {
@@ -135,6 +134,8 @@ void check_assets_numbers(char **tab)
 	t_assets *k;
 	
 	k = malloc(sizeof(t_assets));
+	if(!k)
+		er();
 	k->c = cp(tab, 'C');
 	k->p = cp(tab, 'P');
 	k->e = cp(tab, 'E');
@@ -164,4 +165,23 @@ int cp(char **tab, char k)
 		i++;
 	}
 	return (ccp);
-}	
+}
+
+void	all_parsing_check(char **tab)
+{
+	int nb_collect;
+	int x;
+	int y;
+	int i;
+	char **copy;
+
+	i = 0;
+	copy = (char **)ft_calloc(ft_strlen(*tab),sizeof(char*));
+	check_lines(tab);
+	check_wallls(tab);
+	check_assets(tab);
+	check_assets_numbers(tab);
+	i = backtracking(tab);
+	if(i == 0)
+		er();
+}
