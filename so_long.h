@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 10:35:49 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 15:26:53 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include<stdio.h> 
 # include<string.h>
 # include<fcntl.h>
+# include <mlx.h>
 
 typedef struct s_assets
 {
@@ -28,6 +29,18 @@ typedef struct s_assets
 	int				e;
 
 }	t_assets;
+
+typedef struct s_list
+{
+	void		*mlx;
+	void		*win;
+	void		*imag_player;
+	void		*imag_wall;
+	void		*imag_exit;
+	void		*imag_earth;
+	int			h;
+	int			w;
+}	t_list;
 
 int		ft_strlen(char *str);
 int		check_file_ext(char *s , char *ext);
@@ -46,13 +59,13 @@ char	*get_str(int size, char **strs, char *sep);
 char	*ft_strjoin(int size, char **strs, char *sep);
 char	**error_malloc(char **tab);
 int		word_count(const char *str, char c);
-void 	check_lines(char	**tab);
+void 	check_lines(char	**tab,t_list *k);
 void	check_wallls(char **tab);
 void	check_assets(char **tab);
 void 	er();
 int		cp(char **tab, char k);
 void	check_assets_numbers(char **tab);
-void	all_parsing_check(char **tab);
+void	all_parsing_check(char **tab,t_list *k);
 char	**copy_map(char **map);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
@@ -61,7 +74,7 @@ int		back_track_fun(char **tab, char c , int x, int y);
 char	**print_map(char **tab);
 void	freemap(char **str);
 int		backtracking(char **str);
-
+void	parsing(int ac,char *av,t_list *k);
 
 
 

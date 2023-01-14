@@ -6,49 +6,19 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/10 14:20:32 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 16:01:55 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-
-
 int main(int ac, char **av)
 {
-	int		fd;
-	char	**tab;
-	char	*str;
-	char	*sj;
-	int i = 0;
-	if(ac == 2)
-	{
-				
-		if(check_file_ext(av[1],".ber"))
-		{	
-			sj = ft_strdup("");
-			if(!sj)
-				exit(0);
-			fd = open(av[1], O_RDONLY);
-			if(fd < 3)
-				exit(0);
-			str = get_next_line(fd);
-			if(!str)
-				exit(0);
-			while (str)
-			{
-				if(str[0] == '\n')
-				return	(write(2, "Error\n", 6));
-				sj = ft_strjoinn(sj, str);
-				free(str);
-				str = get_next_line(fd);
-			}
-			tab = ft_split(sj,'\n');	
-			all_parsing_check(tab);
-		}
-		else
-		 er();
-	}
-	else
-		er();
+	t_list so_long;
+
+	parsing(ac , av[1], &so_long );
+	so_long.mlx = mlx_init();
+	so_long.win = mlx_new_window(so_long.mlx,so_long.w * 64 , so_long.h * 64 , "so_long");
+	mlx_loop(so_long.mlx);
+	return(0);
 }

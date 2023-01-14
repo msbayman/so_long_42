@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 10:51:35 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/14 15:26:25 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen(char *str)
 	return (n);
 }
 
-void  check_lines(char	**tab)
+void  check_lines(char	**tab ,t_list *k)
 {
 	int	i;
 	int	j;
@@ -39,7 +39,8 @@ void  check_lines(char	**tab)
 			er();
 		i++;
 	}
-	 
+	 (*k).h = i;
+	 (*k).w = j;
 }
 
 int check_file_ext(char *s , char *ext)
@@ -89,31 +90,14 @@ void check_wallls(char **tab)
 	}
 }
 
-// void tba3(char **tab)
-// {
-// 	int i;
-// 	int j;
 
-// 	i = 0;
-// 	j = 0;
-// 	while (tab[i])
-// 	{
-// 		j = 0;
-// 		while(tab[i][j])
-// 		{
-// 			printf("%c", tab[i][j]);
-// 			j++;
-// 		}
-// 		printf("\n");
-// 		i++;
-// 	}
-// }
 
 void check_assets(char **tab)
 {
 	int i;
 	int j;
 	
+	j = 0;
 	i = 0;
 	while (tab[j])
 		j++;
@@ -167,21 +151,57 @@ int cp(char **tab, char k)
 	return (ccp);
 }
 
-void	all_parsing_check(char **tab)
+void	all_parsing_check(char **tab , t_list *k)
 {
-	int nb_collect;
-	int x;
-	int y;
 	int i;
 	char **copy;
 
 	i = 0;
 	copy = (char **)ft_calloc(ft_strlen(*tab),sizeof(char*));
-	check_lines(tab);
+	check_lines(tab , k);
 	check_wallls(tab);
 	check_assets(tab);
 	check_assets_numbers(tab);
 	i = backtracking(tab);
 	if(i == 0)
 		er();
+}
+
+void parsing(int ac,char* av, t_list *k)
+{
+	int		fd;
+	char	**tab;
+	char	*str;
+	char	*sj;
+	
+	if(ac == 2)
+	{		
+		if(check_file_ext(av,".ber"))
+		{	
+			sj = ft_strdup("");
+			if(!sj)
+				exit(0);
+			fd  = open(av, O_RDONLY);
+			if(fd < 0)
+				exit(0);
+			str  = get_next_line(fd);
+			if(!str)
+				exit(0);
+			while (str)
+			{
+				if(str[0] == '\n')
+					er();
+				sj = ft_strjoinn(sj, str);
+				free(str);
+				str = get_next_line(fd);
+			}
+			tab = ft_split(sj,'\n');	
+			all_parsing_check(tab ,k);
+		}
+		else
+		 er();
+	}
+	else
+		er();
+	
 }
