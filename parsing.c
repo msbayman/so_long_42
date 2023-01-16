@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 15:48:11 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 16:46:48 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -196,6 +196,7 @@ void parsing(int ac,char* av, t_list *k)
 				free(str);
 				str = get_next_line(fd);
 			}
+			free (sj);
 			tab = ft_split(sj,'\n');	
 			all_parsing_check(tab ,k);
 		k->map = tab;
