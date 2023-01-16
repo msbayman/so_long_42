@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 15:12:13 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:47:42 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_list
 	char		**map;
 	int			cp;
 	int			cp_collect;
+	int			cp_exit;
 }	t_list;
 
 int		ft_strlen(char *str);

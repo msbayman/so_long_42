@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 15:21:48 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:52:43 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,9 @@ void check_collect(t_list *so_long)
 			so_long->cp_collect--;
 			so_long->map[so_long->y_P / 64][so_long->x_P / 64] ='0';
 		}
+	if(so_long->map[so_long->y_P / 64][so_long->x_P / 64] == 'E')
+	{
+		write(1,"you win",8);
+		exit(0);
+	}
 }
