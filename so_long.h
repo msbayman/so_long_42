@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 17:42:18 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 12:24:06 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ typedef struct s_assets
 
 }	t_assets;
 
+typedef struct s_co
+{
+	int			x;
+	int			y;
+
+}	t_co;
+
 typedef struct s_list
 {
 	void		*mlx;
@@ -41,6 +48,8 @@ typedef struct s_list
 	void		*imag_collect;
 	int			h;
 	int			w;
+	int			x_P;
+	int			y_P;		
 	char		**map;
 }	t_list;
 
@@ -78,6 +87,8 @@ void	freemap(char **str);
 int		backtracking(char **str);
 void	parsing(int ac,char *av,t_list *k);
 void	draw_map(t_list *k);
+// int		mlx_is_key_down();
+// int		mlx_close_window();
 
 
 
