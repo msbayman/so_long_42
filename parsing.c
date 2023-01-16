@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 16:54:19 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:16:19 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,11 @@ void check_assets(char **tab)
 	}
 }
 
-void check_assets_numbers(char **tab)
+void check_assets_numbers(char **tab, t_list *b)
 {
 	t_assets *k;
 	
+	b->cp_collect = 0;
 	k = malloc(sizeof(t_assets));
 	if(!k)
 		er();
@@ -125,6 +126,7 @@ void check_assets_numbers(char **tab)
 	k->e = cp(tab, 'E');
 	if (k->c < 1 || k->p != 1 || k->e != 1)
 		er();
+	b->cp_collect = k->c;
 	free(k);
 }
 
@@ -159,7 +161,7 @@ void	all_parsing_check(char **tab , t_list *k)
 	check_lines(tab , k);
 	check_wallls(tab);
 	check_assets(tab);
-	check_assets_numbers(tab);
+	check_assets_numbers(tab, k);
 	i = backtracking(tab);
 	if(i == 0)
 		er();

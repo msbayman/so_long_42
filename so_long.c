@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 13:11:47 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:22:43 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int move_player(int k,t_list *so_long)
 {
-	(void)so_long;
-	printf("%d\n", k);
 	if (k == 53 )
 		exit(0);
 	if(k == 0)
@@ -23,8 +21,13 @@ int move_player(int k,t_list *so_long)
 		if( so_long->map[so_long->y_P / 64 ][so_long->x_P / 64 -1] != '1')
 		{
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P, so_long->y_P) ;
+			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P - 64 , so_long->y_P );
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_player , so_long->x_P - 64 , so_long->y_P );
 			so_long->x_P -= 64;
+			check_collect(so_long);
+			so_long->cp++;
+			ft_putnbr(so_long->cp);
+			write(1, "\n", 1);
 		}
 	}
 	if(k == 1)
@@ -32,8 +35,13 @@ int move_player(int k,t_list *so_long)
 		if( so_long->map[so_long->y_P / 64 + 1][so_long->x_P / 64] != '1')
 		{
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P, so_long->y_P ) ;
+			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P , so_long->y_P + 64 );
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_player , so_long->x_P , so_long->y_P + 64 );
 			so_long->y_P += 64;
+			check_collect(so_long);
+			so_long->cp++;
+			ft_putnbr(so_long->cp);
+			write(1, "\n", 1);
 		}
 	}
 	if(k == 2)
@@ -41,8 +49,13 @@ int move_player(int k,t_list *so_long)
 		if( so_long->map[so_long->y_P / 64 ][so_long->x_P / 64 + 1] != '1')
 		{
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P, so_long->y_P) ;
+			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P + 64 , so_long->y_P );
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_player , so_long->x_P + 64 , so_long->y_P );
 			so_long->x_P += 64;
+			check_collect(so_long);
+			so_long->cp++;
+			ft_putnbr(so_long->cp);
+			write(1, "\n", 1);
 		}
 	}
 	if(k == 13)
@@ -50,8 +63,13 @@ int move_player(int k,t_list *so_long)
 		if( so_long->map[so_long->y_P / 64 - 1][so_long->x_P / 64] != '1')
 		{
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P, so_long->y_P) ;
+			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_ground , so_long->x_P , so_long->y_P  - 64);
 			mlx_put_image_to_window(so_long->mlx, so_long->win, so_long->imag_player , so_long->x_P , so_long->y_P  - 64);
 			so_long->y_P -= 64;
+			check_collect(so_long);
+			so_long->cp++;
+			ft_putnbr(so_long->cp);
+			write(1, "\n", 1);
 		}
 	}
 		
@@ -60,8 +78,8 @@ int move_player(int k,t_list *so_long)
 int main(int ac, char **av)
 {
 	t_list so_long;
-	// void (*fun_ptr)(t_list) = &move_player;
 	
+	so_long.cp = 0;
 	parsing(ac , av[1], &so_long );
 	so_long.mlx = mlx_init();
 	so_long.win = mlx_new_window(so_long.mlx,so_long.w * 64 , so_long.h * 64 , "so_long");

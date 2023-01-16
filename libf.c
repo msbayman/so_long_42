@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:33:11 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/14 10:42:19 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 14:32:26 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,4 +204,25 @@ void	freemap(char **str)
 		free(str[i++]);
 	}
 	free(str);
+}
+
+void	ft_putnbr(int n)
+{
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n *= -1;
+	}
+	if (n > 9)
+	{
+		ft_putnbr((n / 10));
+		ft_putnbr((n % 10));
+	}
+	if (n <= 9)
+		ft_putchar(n + '0');
+}
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }

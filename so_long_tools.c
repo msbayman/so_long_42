@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 12:49:23 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:21:48 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,13 @@ void draw_map(t_list *k)
 	}
 	
 	
+}
+
+void check_collect(t_list *so_long)
+{
+	if(so_long->map[so_long->y_P / 64][so_long->x_P / 64] == 'C')
+		{
+			so_long->cp_collect--;
+			so_long->map[so_long->y_P / 64][so_long->x_P / 64] ='0';
+		}
 }

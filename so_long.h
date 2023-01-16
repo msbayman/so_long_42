@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 12:24:06 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/16 15:12:13 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct s_list
 	int			x_P;
 	int			y_P;		
 	char		**map;
+	int			cp;
+	int			cp_collect;
 }	t_list;
 
 int		ft_strlen(char *str);
@@ -75,8 +77,8 @@ void	check_wallls(char **tab);
 void	check_assets(char **tab);
 void 	er();
 int		cp(char **tab, char k);
-void	check_assets_numbers(char **tab);
-void	all_parsing_check(char **tab,t_list *k);
+void 	check_assets_numbers(char **tab, t_list *k);
+void	all_parsing_check(char **tab, t_list *k);
 char	**copy_map(char **map);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, size_t n);
@@ -87,8 +89,9 @@ void	freemap(char **str);
 int		backtracking(char **str);
 void	parsing(int ac,char *av,t_list *k);
 void	draw_map(t_list *k);
-// int		mlx_is_key_down();
-// int		mlx_close_window();
+void	ft_putnbr(int n);
+void	ft_putchar(char c);
+void	check_collect(t_list *so_long);
 
 
 
