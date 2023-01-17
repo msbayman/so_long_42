@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:44:41 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/17 14:46:39 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:42:48 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,41 +67,36 @@ void	all_parsing_check(char **tab, t_list *k)
 		er();
 }
 
-void	parsing(int ac, char *av, t_list *k)
+void	parsing(char *av, t_list *k)
 {
 	int		fd;
 	char	**tab;
 	char	*str;
 	char	*sj;
 
-	if (ac == 2)
-	{		
-		if (check_file_ext(av, ".ber"))
-		{	
-			sj = ft_strdup("");
-			if (!sj)
-				er();
-			fd = open(av, O_RDONLY);
-			if (fd < 0)
-				er();
-			str = get_next_line(fd);
-			if (!str)
-				er();
-			while (str)
-			{
-				if (str[0] == '\n')
-					er();
-				sj = ft_strjoinn(sj, str);
-				free(str);
-				str = get_next_line(fd);
-			}
-			free (sj);
-			tab = ft_split(sj, '\n');
-			all_parsing_check(tab, k);
-		k->map = tab;
-		}
-		else
+	if (check_file_ext(av, ".ber"))
+	{	
+		sj = ft_strdup("");
+		if (!sj)
 			er();
+		fd = open(av, O_RDONLY);
+		if (fd < 0)
+			er();
+		str = get_next_line(fd);
+		if (!str)
+			er();
+		while (str)
+		{
+			if (str[0] == '\n')
+				er();
+			sj = ft_strjoinn(sj, str);
+			free(str);
+			str = get_next_line(fd);
+		}
+		free (sj);
+		tab = ft_split(sj, '\n');
+		all_parsing_check(tab, k);
+	k->map = tab;
 	}
 	else
 		er();

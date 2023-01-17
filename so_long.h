@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/17 15:55:15 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:38:02 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int		back_track_fun(char **tab, char c, int x, int y);
 char	**print_map(char **tab);
 void	freemap(char **str);
 int		backtracking(char **str);
-void	parsing(int ac, char *av, t_list *k);
+void	parsing(char *av, t_list *k);
 void	draw_map(t_list *k);
 void	ft_putnbr(int n);
 void	ft_putchar(char c);

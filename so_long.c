@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/17 15:51:29 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 17:42:32 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,10 @@ int	main(int ac, char **av)
 {
 	t_list	so_long;
 
+	if (ac != 2)
+		er();
 	so_long.cp = 0;
-	parsing(ac, av[1], &so_long);
+	parsing(av[1], &so_long);
 	so_long.mlx = mlx_init();
 	so_long.win = mlx_new_window(so_long.mlx,
 			so_long.w * 64, so_long.h * 64, "so_long");
