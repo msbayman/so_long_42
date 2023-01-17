@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:44:41 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/17 17:42:48 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 18:02:35 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,18 @@ void	all_parsing_check(char **tab, t_list *k)
 		er();
 }
 
+void	parsing2(char **str, char **sj, int fd)
+{
+	while (str[0])
+	{
+		if (str[0][0] == '\n')
+			er();
+		sj[0] = ft_strjoinn(sj[0], str[0]);
+		free(str[0]);
+		str[0] = get_next_line(fd);
+	}
+}
+
 void	parsing(char *av, t_list *k)
 {
 	int		fd;
@@ -85,14 +97,7 @@ void	parsing(char *av, t_list *k)
 		str = get_next_line(fd);
 		if (!str)
 			er();
-		while (str)
-		{
-			if (str[0] == '\n')
-				er();
-			sj = ft_strjoinn(sj, str);
-			free(str);
-			str = get_next_line(fd);
-		}
+		parsing2 (&str, &sj, fd);
 		free (sj);
 		tab = ft_split(sj, '\n');
 		all_parsing_check(tab, k);

@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:12:50 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/17 17:38:02 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 18:01:01 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,6 @@ int		up(t_list *so_long);
 int		down(t_list *so_long);
 int		right(t_list *so_long);
 int		left(t_list *so_long);
+void	parsing2(char **str, char **sj, int fd);
 
 #endif
