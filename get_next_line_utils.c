@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:16:35 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/07 11:06:00 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 14:29:03 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strjoinn(char	*s1, char	*s2)
 	size_t	i;
 	size_t	j;
 	char	*rs;
-	
+
 	if (!s1)
 		s1 = ft_strdup(s1);
 	sa = ft_strlenn(s1);

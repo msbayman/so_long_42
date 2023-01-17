@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:33:11 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/16 14:32:26 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/17 14:30:41 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,99 +130,6 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		while (sep[j] && i != size - 1)
 		str[k++] = sep[j++];
 	}
-	str[k ] = '\0';
+	str[k] = '\0';
 	return (str);
-}
-
-char	**error_malloc(char **tab)
-{
-	unsigned int	i;	
-
-	i = 0;
-	while (tab[i])
-		free(tab[i++]);
-	free(tab);
-	return (NULL);
-}
-
-int	word_count(const char *str, char c)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			i++;
-		if (str[i] == c)
-		{
-			write(2, "Error\n", 6);
-			exit(1);
-		}
-		else
-		{
-			count++;
-			while (str[i] != c && str[i])
-				i++;
-		}
-	}
-	return (count);
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*ptr;
-
-	ptr = (void *)malloc(count * size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_bzero(ptr, count * size);
-	return (ptr);
-}
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*k;
-
-	k = s;
-	while (n)
-	{
-		*k++ = 0;
-		n--;
-	}
-}
-
-void	freemap(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i++]);
-	}
-	free(str);
-}
-
-void	ft_putnbr(int n)
-{
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n *= -1;
-	}
-	if (n > 9)
-	{
-		ft_putnbr((n / 10));
-		ft_putnbr((n % 10));
-	}
-	if (n <= 9)
-		ft_putchar(n + '0');
-}
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
 }
