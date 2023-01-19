@@ -6,25 +6,38 @@
 #    By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 11:21:07 by amsaoub           #+#    #+#              #
-#    Updated: 2023/01/17 15:53:13 by amsaoub          ###   ########.fr        #
+#    Updated: 2023/01/19 11:30:21 by amsaoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = so_long
+NAMEB = so_long_bonus
 HEADER = so_long.h
 
-SRC = backtraking.c \
-	get_next_line_utils.c \
-	parsing2.c \
-	parsing.c \
-	so_long_tools.c  \
-	get_next_line.c \
-	libf.c \
-	libf2.c \
-	libf3.c \
-	moves.c \
-	so_long.c \
+SRC = mandatory/backtraking.c \
+	mandatory/get_next_line_utils.c \
+	mandatory/parsing2.c \
+	mandatory/parsing.c \
+	mandatory/so_long_tools.c  \
+	mandatory/get_next_line.c \
+	mandatory/libf.c \
+	mandatory/libf2.c \
+	mandatory/libf3.c \
+	mandatory/moves.c \
+	mandatory/so_long.c \
+
+BSRC = bonus/backtraking.c \
+	bonus/get_next_line_utils.c \
+	bonus/parsing2.c \
+	bonus/parsing.c \
+	bonus/so_long_tools.c  \
+	bonus/get_next_line.c \
+	bonus/libf.c \
+	bonus/libf2.c \
+	bonus/libf3.c \
+	bonus/moves.c \
+	bonus/so_long.c \
 
 
 CC = cc
@@ -33,13 +46,18 @@ RM = rm -rf
 
 all: $(NAME)
 
+bonus : $(NAMEB)
+
 $(NAME): $(SRC) $(HEADER)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
+$(NAMEB): $(BSRC) $(HEADER)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAMEB)
+
 clean:
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(NAMEB)
 
 fclean: clean
-	$(RM) $(BONUS)
+	$(RM) $(bonus)
 
 re: fclean all
