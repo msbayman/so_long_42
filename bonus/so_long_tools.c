@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:29 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:54:56 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 void	er(void)
 {
@@ -82,4 +82,17 @@ void	check_collect(t_list *so_long)
 		write(1, "you win", 8);
 		exit(0);
 	}
+}
+
+void print_cp(t_list *so_long)
+{
+	char *s;
+	mlx_put_image_to_window(so_long->mlx, so_long->win,
+			so_long->imag_wall, 0, 0);
+	mlx_put_image_to_window(so_long->mlx, so_long->win,
+	so_long->imag_wall, 64, 0);
+s =  ft_itoa(so_long->cp);
+	mlx_string_put(so_long->mlx,
+			so_long->win, 0, 0, 0xffffff, s);
+free(s);
 }

@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:33:11 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:21:59 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:23:16 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 char	*get_word(const char *s1, int *index, char c)
 {

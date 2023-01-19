@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:51:08 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:21:51 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:23:08 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 char	**copy_map(char **map)
 {

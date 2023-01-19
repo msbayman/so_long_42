@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:32 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:52:03 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 int	move_player(int k, t_list *so_long)
 {

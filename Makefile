@@ -6,7 +6,7 @@
 #    By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 11:21:07 by amsaoub           #+#    #+#              #
-#    Updated: 2023/01/19 11:30:21 by amsaoub          ###   ########.fr        #
+#    Updated: 2023/01/19 14:29:51 by amsaoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 NAME = so_long
 NAMEB = so_long_bonus
 HEADER = so_long.h
+HEADERB = so_long_bonus.h
 
 SRC = mandatory/backtraking.c \
 	mandatory/get_next_line_utils.c \
@@ -51,8 +52,8 @@ bonus : $(NAMEB)
 $(NAME): $(SRC) $(HEADER)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
-$(NAMEB): $(BSRC) $(HEADER)
-	$(CC) $(CFLAGS) $(SRC) -o $(NAMEB)
+$(NAMEB): $(BSRC) $(HEADERB)
+	$(CC) $(CFLAGS) $(BSRC) -o $(NAMEB)
 
 clean:
 	$(RM) $(NAME) $(NAMEB)

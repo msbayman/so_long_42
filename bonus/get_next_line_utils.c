@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:16:35 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:21:44 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:23:11 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 size_t	ft_strlenn( const char *c)
 {

@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:50:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:19 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:46:45 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 int	up(t_list *so_long)
 {
@@ -28,6 +28,7 @@ int	up(t_list *so_long)
 		so_long->y_p -= 64;
 		check_collect(so_long);
 		so_long->cp++;
+		print_cp(so_long);
 		ft_putnbr(so_long->cp);
 		write(1, "\n", 1);
 	}
@@ -50,6 +51,7 @@ int	down(t_list *so_long)
 		so_long->y_p += 64;
 		check_collect(so_long);
 		so_long->cp++;
+		print_cp(so_long);
 		ft_putnbr(so_long->cp);
 		write(1, "\n", 1);
 	}
@@ -72,6 +74,7 @@ int	right(t_list *so_long)
 		so_long->x_p += 64;
 		check_collect(so_long);
 		so_long->cp++;
+		print_cp(so_long);
 		ft_putnbr(so_long->cp);
 		write(1, "\n", 1);
 	}
@@ -94,6 +97,7 @@ int	left(t_list *so_long)
 		so_long->x_p -= 64;
 		check_collect(so_long);
 		so_long->cp++;
+		print_cp(so_long);
 		ft_putnbr(so_long->cp);
 		write(1, "\n", 1);
 	}

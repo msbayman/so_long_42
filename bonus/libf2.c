@@ -6,11 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:30:09 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:01 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 14:23:19 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../so_long.h"
+#include"../so_long_bonus.h"
 
 char	**error_malloc(char **tab)
 {
