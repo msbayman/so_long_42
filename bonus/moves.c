@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:50:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 14:46:45 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:17:15 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	right(t_list *so_long)
 		if (so_long->map[so_long->y_p / 64][so_long->x_p / 64 + 1] == 'E'
 			&& so_long->cp_collect > 0)
 			return (0);
+		so_long->imag_player = mlx_xpm_file_to_image(so_long->mlx,
+			"xpm/player.xpm", &so_long->h, &so_long->w);
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->imag_ground, so_long->x_p + 64, so_long->y_p);
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
@@ -88,6 +90,8 @@ int	left(t_list *so_long)
 		if (so_long->map[so_long->y_p / 64][so_long->x_p / 64 - 1] == 'E'
 			&& so_long->cp_collect > 0)
 			return (0);
+		so_long->imag_player = mlx_xpm_file_to_image(so_long->mlx,
+		"xpm/lisar.xpm", &so_long->h, &so_long->w);
 		mlx_put_image_to_window(so_long->mlx, so_long->win,
 			so_long->imag_ground, so_long->x_p, so_long->y_p);
 		mlx_put_image_to_window(so_long->mlx, so_long->win,

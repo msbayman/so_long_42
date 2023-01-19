@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:32 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 17:26:55 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	so_long.imag_exit = mlx_xpm_file_to_image(so_long.mlx,
 			"xpm/exit.xpm", &so_long.h, &so_long.w);
 	so_long.imag_collect = mlx_xpm_file_to_image(so_long.mlx,
-			"./xpm/collect.xpm", &so_long.h, &so_long.w);
+			"./xpm/collectx.xpm", &so_long.h, &so_long.w);
 	draw_map(&so_long);
 	mlx_hook(so_long.win, 2, (1L << 0), move_player, &so_long);
 	mlx_loop(so_long.mlx);
