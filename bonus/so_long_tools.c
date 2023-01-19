@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 14:54:56 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:51:30 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,31 @@ void	draw_map(t_list *k)
 					k->imag_player, j * 64, i * 64);
 				k->x_p = j * 64;
 				k->y_p = i * 64;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+void	draw_collect(t_list *k)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while ((k->map)[i])
+	{
+		j = 0;
+		while ((k->map)[i][j])
+		{
+			if ((k->map)[i][j] == 'C')
+			{
+				mlx_put_image_to_window(k->mlx, k->win,
+					k->imag_ground, j * 64, i * 64);
+				mlx_put_image_to_window(k->mlx, k->win,
+					k->imag_collect, j * 64, i * 64);
 			}
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 14:47:14 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/19 18:56:08 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,7 @@ int		left(t_list *so_long);
 void	parsing2(char **str, char **sj, int fd);
 char	*ft_itoa(int n);
 void	print_cp(t_list *so_long);
+void	draw_collect(t_list *k);
+int		render_help(t_list *k,int i);
 
 #endif
