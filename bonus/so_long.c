@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 18:55:31 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:16:38 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,35 @@ int render_help(t_list *k, int i)
 	return (i);
 }
 
+int render_fire(t_list *k, int i)
+{
+	if(i == 3000)
+		{
+		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+				"./xpm/fire1.xpm", &k->h, &k->w);	
+		draw_collect(k);
+	}
+	if(i == 4000)
+		{
+		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+				"./xpm/fire2.xpm", &k->h, &k->w);	
+		draw_collect(k);
+	}
+	if(i == 5000)
+		{
+		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+				"./xpm/fire3.xpm", &k->h, &k->w);	
+		draw_collect(k);
+	}
+	if(i == 6000)
+		{
+		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+				"./xpm/fire4.xpm", &k->h, &k->w);	
+		draw_collect(k);
+	}
+	return (i);
+}
+
 int	main(int ac, char **av)
 {
 	t_list	so_long;
@@ -105,9 +134,13 @@ int	main(int ac, char **av)
 			"xpm/exit.xpm", &so_long.h, &so_long.w);
 	so_long.imag_collect = mlx_xpm_file_to_image(so_long.mlx,
 			"./xpm/collect1.xpm", &so_long.h, &so_long.w);
+	so_long.imag_fire = mlx_xpm_file_to_image(so_long.mlx,
+			"./xpm/fire1.xpm", &so_long.h, &so_long.w);
+	// print_map(so_long.map);
 	draw_map(&so_long);
 	mlx_hook(so_long.win, 2, 1L << 0, move_player, &so_long);
 	mlx_loop_hook(so_long.mlx, render_next_frame, &so_long);
+	// mlx_loop_hook(so_long.mlx, render_fire, &so_long);
 	mlx_loop(so_long.mlx);
 	return (0);
 }

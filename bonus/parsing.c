@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:28:36 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 14:23:27 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 09:49:29 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	check_assets(char **tab)
 		while (i < ft_strlen(tab[0]))
 		{
 			if ((tab[j][i] != '1' && tab[j][i] != '0' && tab[j][i]
-				!= 'E' && tab[j][i] != 'P' && tab[j][i] != 'C'))
+				!= 'E' && tab[j][i] != 'P' && tab[j][i] != 'C' && tab[j][i] != 'F'))
 				er();
 			i++;
 		}

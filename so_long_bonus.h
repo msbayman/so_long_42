@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 18:56:08 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:02:30 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_assets
 	int				p;
 	int				c;
 	int				e;
+	int				f;
 
 }	t_assets;
 
@@ -48,6 +49,7 @@ typedef struct s_list
 	void		*imag_exit;
 	void		*imag_ground;
 	void		*imag_collect;
+	void		*imag_fire;
 	int			h;
 	int			w;
 	int			x_p;
@@ -104,5 +106,6 @@ char	*ft_itoa(int n);
 void	print_cp(t_list *so_long);
 void	draw_collect(t_list *k);
 int		render_help(t_list *k,int i);
+void	lose(void);
 
 #endif

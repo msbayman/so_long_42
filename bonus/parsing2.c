@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:44:41 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 14:23:29 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 09:51:25 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	check_assets_numbers(char **tab, t_list *b)
 	k->c = cp(tab, 'C');
 	k->p = cp(tab, 'P');
 	k->e = cp(tab, 'E');
-	if (k->c < 1 || k->p != 1 || k->e != 1)
+	k->f = cp(tab, 'F');
+	if (k->c < 1 || k->p != 1 || k->e != 1 || k->f < 1)
 		er();
 	b->cp_collect = k->c;
 	b->cp_exit = k->e;

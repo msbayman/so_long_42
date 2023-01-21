@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/19 18:51:30 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:02:18 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ void	draw_map1(t_list *k, int i, int j)
 			k->imag_ground, j * 64, i * 64);
 		mlx_put_image_to_window(k->mlx, k->win,
 			k->imag_collect, j * 64, i * 64);
+	}
+	if ((k->map)[i][j] == 'F')
+	{
+		puts("B");
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_ground, j * 64, i * 64);
+			puts("E");
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_fire, j * 64, i * 64);
+			puts("C");
 	}
 	if ((k->map)[i][j] == 'E')
 	{
@@ -68,6 +78,7 @@ void	draw_map(t_list *k)
 		}
 		i++;
 	}
+	
 }
 
 void	draw_collect(t_list *k)
@@ -89,6 +100,13 @@ void	draw_collect(t_list *k)
 				mlx_put_image_to_window(k->mlx, k->win,
 					k->imag_collect, j * 64, i * 64);
 			}
+			// if ((k->map)[i][j] == 'F')
+			// {
+			// 	mlx_put_image_to_window(k->mlx, k->win,
+			// 		k->imag_ground, j * 64, i * 64);
+			// 	mlx_put_image_to_window(k->mlx, k->win,
+			// 		k->imag_fire, j * 64, i * 64);
+			// }
 			j++;
 		}
 		i++;
@@ -120,4 +138,10 @@ s =  ft_itoa(so_long->cp);
 	mlx_string_put(so_long->mlx,
 			so_long->win, 0, 0, 0xffffff, s);
 free(s);
+}
+
+void	lose(void)
+{
+	write(1,"you lose!",10);
+	exit(0);
 }
