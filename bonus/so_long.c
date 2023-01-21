@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 14:52:58 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 15:51:07 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,6 @@ int	main(int ac, char **av)
 	draw_map(&so_long);
 	mlx_hook(so_long.win, 2, 1L << 0, move_player, &so_long);
 	mlx_loop_hook(so_long.mlx, render_next_frame, &so_long);
-	mlx_loop_hook(so_long.mlx, render_next_frame_fire, &so_long);
-	mlx_loop_hook(so_long.mlx, movesf, &so_long);
-	
 	mlx_loop(so_long.mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:43:03 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 14:58:31 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 15:49:57 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,9 @@ int render_next_frame(t_list *k)
 		draw_collect(k );
 	}
 	render_help(k, i);
+	movesf(k);
 	i++;
+	
 	return (0);
 	
 }
@@ -267,7 +269,7 @@ int render_next_frame_fire(t_list *k)
 	
 }
 
-void	move_fire(t_list *k)
+int	move_fire(t_list *k)
 {
 	int	i;
 	int	j;
@@ -287,22 +289,24 @@ void	move_fire(t_list *k)
 		}
 		i++;
 	}
+	puts("fire");
+	return (0);
 }
 
 int	movesf(t_list *k)
 {
 	static int i;
 
-	if(i == 2000)
+	if(i == 8000)
 	{
 		i = 0;
 		move_fire(k);
 	}
 	i++;
-	return (1);
+	return (0);
 }
 
-void	move_fire_h(t_list *k ,int i, int j)
+int	move_fire_h(t_list *k ,int i, int j)
 {
 	int	x;
 	int y;
@@ -319,4 +323,5 @@ void	move_fire_h(t_list *k ,int i, int j)
 		k->map[i+x][j+y] = 'F';
 		draw_collect(k);
 	}
+	return (0);
 }

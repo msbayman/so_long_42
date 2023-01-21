@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 14:55:21 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 15:37:39 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,9 +109,9 @@ int		render_help(t_list *k,int i);
 int		render_next_frame(t_list *k);
 void	lose(void);
 int		render_next_frame_fire(t_list *k);
-void	move_fire(t_list *k);
-void	move_fire_h(t_list *k ,int i, int j);
-int	movesf(t_list *k);
+int		move_fire(t_list *k);
+int		move_fire_h(t_list *k ,int i, int j);
+int		movesf(t_list *k);
 
 
 #endif
