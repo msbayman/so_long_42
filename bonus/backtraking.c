@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 11:51:08 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 10:13:56 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 10:38:08 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,23 +103,23 @@ int	backtracking(char **str)
 	return (1);
 }
 
-char	**print_map(char **tab)
-{
-	int		i;
-	int		j;
+// char	**print_map(char **tab)
+// {
+// 	int		i;
+// 	int		j;
 
-	i = 0;
-	j = 0;
-	while (tab[i])
-	{
-		j = 0;
-		while (tab[i][j])
-		{
-					printf("%c ",tab[i][j]);
-			j++;
-		}
-		printf("\n");
-			i++;
-	}
-	return (tab);
-}
+// 	i = 0;
+// 	j = 0;
+// 	while (tab[i])
+// 	{
+// 		j = 0;
+// 		while (tab[i][j])
+// 		{
+// 					printf("%c ",tab[i][j]);
+// 			j++;
+// 		}
+// 		printf("\n");
+// 			i++;
+// 	}
+// 	return (tab);
+// }

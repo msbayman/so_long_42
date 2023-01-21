@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 10:16:38 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 14:52:58 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,87 +31,37 @@ int	move_player(int k, t_list *so_long)
 	return (0);
 }
 
-int render_next_frame(t_list *k)
-{
-	static int i;
-	
-	if (i == 6000)
-		i = 0;
-	if(i == 1000)
-	{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect1.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 2000)
-	{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect2.xpm", &k->h, &k->w);	
-		draw_collect(k );
-	}
-	render_help(k, i);
-	i++;
-	return (0);
-	
-}
 
-int render_help(t_list *k, int i)
-{
-	if(i == 3000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect3.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 4000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect4.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 5000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect5.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 6000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/collect6.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	return (i);
-}
 
-int render_fire(t_list *k, int i)
-{
-	if(i == 3000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire1.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 4000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire2.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 5000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire3.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	if(i == 6000)
-		{
-		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire4.xpm", &k->h, &k->w);	
-		draw_collect(k);
-	}
-	return (i);
-}
+
+// int render_fire(t_list *k, int i)
+// {
+// 	if(i == 3000)
+// 		{
+// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+// 				"./xpm/fire1.xpm", &k->h, &k->w);	
+// 		draw_collect(k);
+// 	}
+// 	if(i == 4000)
+// 		{
+// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+// 				"./xpm/fire2.xpm", &k->h, &k->w);	
+// 		draw_collect(k);
+// 	}
+// 	if(i == 5000)
+// 		{
+// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+// 				"./xpm/fire3.xpm", &k->h, &k->w);	
+// 		draw_collect(k);
+// 	}
+// 	if(i == 6000)
+// 		{
+// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
+// 				"./xpm/fire4.xpm", &k->h, &k->w);	
+// 		draw_collect(k);
+// 	}
+// 	return (i);
+// }
 
 int	main(int ac, char **av)
 {
@@ -136,11 +86,12 @@ int	main(int ac, char **av)
 			"./xpm/collect1.xpm", &so_long.h, &so_long.w);
 	so_long.imag_fire = mlx_xpm_file_to_image(so_long.mlx,
 			"./xpm/fire1.xpm", &so_long.h, &so_long.w);
-	// print_map(so_long.map);
 	draw_map(&so_long);
 	mlx_hook(so_long.win, 2, 1L << 0, move_player, &so_long);
 	mlx_loop_hook(so_long.mlx, render_next_frame, &so_long);
-	// mlx_loop_hook(so_long.mlx, render_fire, &so_long);
+	mlx_loop_hook(so_long.mlx, render_next_frame_fire, &so_long);
+	mlx_loop_hook(so_long.mlx, movesf, &so_long);
+	
 	mlx_loop(so_long.mlx);
 	return (0);
 }
