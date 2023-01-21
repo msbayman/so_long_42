@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:31:04 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 17:22:29 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:55:32 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,22 @@ char	*ft_itoa(int n)
 		n = n / 10;
 	}
 	return (str);
+}
+
+void	draw_collect_help(t_list *k, int i, int j)
+{
+	if ((k->map)[i][j] == 'C')
+	{
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_ground, j * 64, i * 64);
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_collect, j * 64, i * 64);
+	}
+	if ((k->map)[i][j] == 'F')
+	{
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_ground, j * 64, i * 64);
+		mlx_put_image_to_window(k->mlx, k->win,
+			k->imag_fire, j * 64, i * 64);
+	}
 }

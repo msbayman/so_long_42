@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:29:17 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 17:37:35 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:55:42 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,18 @@ int	render_next_frame(t_list *k)
 	movesf(k);
 	i++;
 	return (i);
+}
+
+void	check_collect(t_list *so_long)
+{
+	if (so_long->map[so_long->y_p / 64][so_long->x_p / 64] == 'C')
+	{
+			so_long->cp_collect--;
+			so_long->map[so_long->y_p / 64][so_long->x_p / 64] = '0';
+	}
+	if (so_long->map[so_long->y_p / 64][so_long->x_p / 64] == 'E')
+	{
+		write(1, "you win", 8);
+		exit(0);
+	}
 }

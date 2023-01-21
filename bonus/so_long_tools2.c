@@ -6,58 +6,11 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:27:17 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 17:38:08 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 18:50:59 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../so_long_bonus.h"
-
-int	render_help_fire(t_list *k, int j)
-{
-	if (j == 3000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire3.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 4000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire4.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 5000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire5.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 6000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire6.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 7000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire7.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 8000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire8.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	if (j == 9000)
-	{
-		k->imag_fire = mlx_xpm_file_to_image(k->mlx,
-				"./xpm/fire9.xpm", &k->h, &k->w);
-		draw_collect(k);
-	}
-	return (j);
-}
 
 int	render_next_frame_fire(t_list *k)
 {
