@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 10:03:37 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 15:51:07 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/21 17:23:45 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,38 +30,6 @@ int	move_player(int k, t_list *so_long)
 		up(so_long);
 	return (0);
 }
-
-
-
-
-// int render_fire(t_list *k, int i)
-// {
-// 	if(i == 3000)
-// 		{
-// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-// 				"./xpm/fire1.xpm", &k->h, &k->w);	
-// 		draw_collect(k);
-// 	}
-// 	if(i == 4000)
-// 		{
-// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-// 				"./xpm/fire2.xpm", &k->h, &k->w);	
-// 		draw_collect(k);
-// 	}
-// 	if(i == 5000)
-// 		{
-// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-// 				"./xpm/fire3.xpm", &k->h, &k->w);	
-// 		draw_collect(k);
-// 	}
-// 	if(i == 6000)
-// 		{
-// 		k->imag_collect = mlx_xpm_file_to_image(k->mlx,
-// 				"./xpm/fire4.xpm", &k->h, &k->w);	
-// 		draw_collect(k);
-// 	}
-// 	return (i);
-// }
 
 int	main(int ac, char **av)
 {
