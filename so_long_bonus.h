@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 14:20:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 18:53:25 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:21:12 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_list
 	void		*imag_ground;
 	void		*imag_collect;
 	void		*imag_fire;
+	void		*try;
 	int			h;
 	int			w;
 	int			x_p;
@@ -112,4 +113,9 @@ int		move_fire_h(t_list *k, int i, int j);
 int		movesf(t_list *k);
 void	draw_collect_help(t_list *k, int i, int j);
 void	draw_map1_help(t_list *k, int i, int j);
+void	init_image(t_list *so_long);
+int		move_player(int k, t_list *so_long);
+size_t	ft_strlcpy(char *dst, char *src, size_t dstsize);
+void	check_anime(t_list *k);
+
 #endif

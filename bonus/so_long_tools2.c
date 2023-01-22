@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:27:17 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 18:50:59 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:22:05 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,4 +92,26 @@ int	move_fire_h(t_list *k, int i, int j)
 		draw_collect(k);
 	}
 	return (0);
+}
+
+void	init_image(t_list *so_long)
+{
+	so_long->win = mlx_new_window(so_long->mlx,
+			so_long->w * 64, so_long->h * 64, "so_long");
+	so_long->imag_ground = mlx_xpm_file_to_image(so_long->mlx,
+			"./xpm/ground.xpm", &so_long->h, &so_long->w);
+	so_long->imag_player = mlx_xpm_file_to_image(so_long->mlx,
+			"xpm/player.xpm", &so_long->h, &so_long->w);
+	so_long->imag_wall = mlx_xpm_file_to_image(so_long->mlx,
+			"./xpm/wall.xpm", &so_long->h, &so_long->w);
+	so_long->imag_exit = mlx_xpm_file_to_image(so_long->mlx,
+			"xpm/exit.xpm", &so_long->h, &so_long->w);
+	so_long->imag_collect = mlx_xpm_file_to_image(so_long->mlx,
+			"./xpm/collect1.xpm", &so_long->h, &so_long->w);
+	so_long->imag_fire = mlx_xpm_file_to_image(so_long->mlx,
+			"./xpm/fire1.xpm", &so_long->h, &so_long->w);
+	if (!so_long->win || !so_long->imag_ground || !so_long->imag_player
+		|| !so_long->imag_wall || !so_long->imag_exit
+		|| !so_long->imag_collect || !so_long->imag_fire)
+		er();
 }

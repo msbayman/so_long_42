@@ -6,7 +6,7 @@
 /*   By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:50:39 by amsaoub           #+#    #+#             */
-/*   Updated: 2023/01/21 17:23:04 by amsaoub          ###   ########.fr       */
+/*   Updated: 2023/01/22 14:25:08 by amsaoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,6 @@ int	up(t_list *so_long)
 		check_collect(so_long);
 		so_long->cp++;
 		print_cp(so_long);
-		ft_putnbr(so_long->cp);
-		write(1, "\n", 1);
 	}
 	return (0);
 }
@@ -56,8 +54,6 @@ int	down(t_list *so_long)
 		check_collect(so_long);
 		so_long->cp++;
 		print_cp(so_long);
-		ft_putnbr(so_long->cp);
-		write(1, "\n", 1);
 	}
 	return (0);
 }
@@ -83,8 +79,6 @@ int	right(t_list *so_long)
 		check_collect(so_long);
 		so_long->cp++;
 		print_cp(so_long);
-		ft_putnbr(so_long->cp);
-		write(1, "\n", 1);
 	}
 	return (0);
 }
@@ -110,8 +104,6 @@ int	left(t_list *so_long)
 		check_collect(so_long);
 		so_long->cp++;
 		print_cp(so_long);
-		ft_putnbr(so_long->cp);
-		write(1, "\n", 1);
 	}
 	return (0);
 }

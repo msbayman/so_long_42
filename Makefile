@@ -6,7 +6,7 @@
 #    By: amsaoub <amsaoub@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/14 11:21:07 by amsaoub           #+#    #+#              #
-#    Updated: 2023/01/21 17:30:02 by amsaoub          ###   ########.fr        #
+#    Updated: 2023/01/22 11:44:25 by amsaoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ BSRC = bonus/backtraking.c \
 	bonus/so_long_tools.c  \
 	bonus/so_long_tools2.c  \
 	bonus/so_long_tools3.c  \
+	bonus/so_long_tools4.c  \
 	bonus/get_next_line.c \
 	bonus/libf.c \
 	bonus/libf2.c \
